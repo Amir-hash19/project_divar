@@ -51,4 +51,4 @@ class Account(models.Model):
     objects = MyAccountManager()
 
     def __str__(self):
-        return f"{self.username} {self.email}"
+        return f"{self.email}"

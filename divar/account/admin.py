@@ -15,4 +15,4 @@ class AccountAdmin(admin.ModelAdmin):
             return ("username", "email")
         return ("username", )
 
-admin.site.register(Account)
+admin.site.register(Account, AccountAdmin)
