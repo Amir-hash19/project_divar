@@ -35,19 +35,11 @@ class MyAccountManager(BaseUserManager):
 
 
 
-def get_default_profile_image():
-    return 'profile/profile_default/profile_image.png'
-
-def get_profile_image_filepath(self, filename):
-    return 'profile/profile_images/' + str(self.pk) + '/profile_image.png'
-
-
 class Account(models.Model):
     username = models.CharField(max_length=60, unique=True)
     email = models.EmailField(max_length=100, unique=True)
     mobile = PhoneNumberField(unique=True, region="IR")
     date_joined = models.DateTimeField(auto_now_add=True)
-    profile_image = models.ImageField(max_length=255, upload_to=get_default_profile_image, null=True, blank=True, default=get_profile_image_filepath)
     hide_email = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)

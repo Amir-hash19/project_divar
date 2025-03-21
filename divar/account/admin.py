@@ -14,7 +14,5 @@ class AccountAdmin(admin.ModelAdmin):
         if request.user.is_superuser:
             return ("username", "email")
         return ("username", )
-    
-
 
 admin.site.register(Account)
